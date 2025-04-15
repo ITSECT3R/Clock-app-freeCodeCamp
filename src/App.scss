@@ -1,0 +1,135 @@
+$primary-color: #1e555c;
+$secondary-color: #15292b;
+$accent-color: #13353a;
+$text-color: #fff;
+$button-color: #4d8d96;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: $text-color;
+  background: $primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+}
+
+#clock-container {
+  background-color: $accent-color;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+
+  h1 {
+    margin-bottom: 25px;
+    font-size: 2rem;
+  }
+}
+
+.length-controls {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    button {
+      background: $button-color;
+      border: none;
+      color: $text-color;
+      font-size: 1.2rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 0 10px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: darken($button-color, 10%);
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+
+    span {
+      font-size: 1.5rem;
+      width: 40px;
+    }
+  }
+}
+
+#timer {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: $secondary-color;
+  border-radius: 10px;
+
+  #timer-label {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  #time-left {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+}
+
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  button {
+    background: $button-color;
+    border: none;
+    color: $text-color;
+    font-size: 1.5rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+
+    &:hover {
+      background-color: darken($button-color, 10%);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  #clock-container {
+    padding: 15px;
+    width: 95%;
+  }
+
+  .length-controls {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
